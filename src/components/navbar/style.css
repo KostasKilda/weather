@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    margin: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+ul li{
+    margin: 6px 14px;
+    
+}
+
+.navbarLink{
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
