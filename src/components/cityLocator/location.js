@@ -23,7 +23,7 @@ function IP() {
         const ipResponse = await fetch('https://api.ipify.org/?format=json');
         const data = await ipResponse.json();
 
-        const locationResponse = await fetch(`http://ip-api.com/json/${data.ip}`);
+        const locationResponse = await fetch(`https://ipapi.co/${data.ip}/json/`);
         const locationData = await locationResponse.json();
         citySet(locationData.city);
 
