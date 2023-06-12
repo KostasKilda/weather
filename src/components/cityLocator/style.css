@@ -1,4 +1,4 @@
-.weatherWindow{
+.weatherWindow {
     width: 100vw;
     height: 100vh;
     background-image: url('../../images/blueSky.jpg');
@@ -6,19 +6,19 @@
 
 }
 
-.weatherAnimation{
+.weatherAnimation {
     height: 30vh;
     width: 100wv;
     /* background-color: #1ee6e6; */
 }
 
-.currentParams{
+.currentParams {
     height: 40vh;
     width: 100wv;
     /* background-color: #11b1d1; */
 }
 
-.cityName{
+.cityName {
     text-align: center;
     font-size: 38px;
     font-family: 'Roboto', sans-serif;
@@ -26,7 +26,7 @@
     font-weight: 500;
 }
 
-.additionalInfo{
+.additionalInfo {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,7 +34,7 @@
     height: 80%;
 }
 
-.currentInfo{
+.currentInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,25 +49,210 @@
     font-size: 18px;
 }
 
-.infoName{
+.infoName {
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     margin: 0 2px 4px 2px;
 }
 
-.infoParams{
+.infoParams {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
 
-.info{
+.info {
     margin: 0 10px 0 0;
 }
 
-img{
+img {
     width: 50px;
     height: 40px;
 }
+
+#clouds {
+    padding: 100px 0;
+    background: #c9dbe9;
+    background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+    background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+    background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+    width: 200px;
+    height: 60px;
+    background: #fff;
+
+    border-radius: 200px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+
+    position: relative;
+}
+
+.cloud:before,
+.cloud:after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+    width: 120px;
+    height: 120px;
+    top: -55px;
+    left: auto;
+    right: 15px;
+}
+
+
+.cloud1 {
+    position: fixed;
+    top: 100px;
+    right: 2000px;
+
+	transform: scale(0.7);
+	opacity: 0.7;
+    animation: moveClouds 80s linear infinite;
+    animation-delay: 40s;
+}
+
+.cloud2 {
+    position: fixed;
+    top: 120px;
+    right: 2000px;
+    
+	transform: scale(0.8);
+	opacity: 0.8;
+    animation: moveClouds 60s linear infinite;
+    animation-delay: 50s;
+}
+
+.cloud3 {
+    top: 80px;
+    position: fixed;
+    right: 2000px;
+
+	transform: scale(0.8);
+	opacity: 0.9;
+    animation: moveClouds 80s linear infinite;
+}
+
+.cloud4 {
+    position: fixed;
+    top: 160px;
+    right: 2000px;
+
+	transform: scale(0.7);
+	opacity: 0.7;
+    animation: moveClouds 120s linear infinite;
+    animation-delay: 14s;
+}
+
+.cloud5 {
+    position: fixed;
+    top: 60px;
+    right: 2000px;
+    
+	transform: scale(0.8);
+	opacity: 0.8;
+    animation: moveClouds 100s linear infinite;
+    animation-delay: 30s;
+}
+
+.cloud6 {
+    top: 100px;
+    position: fixed;
+    right: 2000px;
+
+	transform: scale(0.8);
+	opacity: 0.9;
+    animation: moveClouds 80s linear infinite;
+    animation-delay: 20s;
+}
+
+.cloud7 {
+    top: 100px;
+    position: fixed;
+    right: 2000px;
+
+	transform: scale(0.8);
+	opacity: 0.9;
+    animation: moveClouds 80s linear infinite;
+    animation-delay: 20s;
+}
+
+.cloud8 {
+    top: 60px;
+    position: fixed;
+    right: 2000px;
+
+	transform: scale(0.7);
+	opacity: 0.8;
+    animation: moveClouds 120s linear infinite;
+    animation-delay: 60s;
+}
+
+.cloud9 {
+    top: 120px;
+    position: fixed;
+    right: 2000px;
+
+	transform: scale(0.6);
+	opacity: 0.6;
+    animation: moveClouds 90s linear infinite;
+    animation-delay: 2s;
+}
+
+.cloud10 {
+    top: 75px;
+    position: fixed;
+    right: 2000px;
+
+	transform: scale(0.9);
+	opacity: 0.9;
+    animation: moveClouds 110s linear infinite;
+    animation-delay: 4s;
+}
+
+
+
+@keyframes moveClouds {
+    0%{
+        right: 2000px;
+    }
+    50%{
+        right: -300px;
+    }
+    100%{
+        right: 2000px;
+    }
+}
+
+/* @keyframes backwardsmoveClouds {
+    0%{
+        right: -300px;
+    }
+    50%{
+        right: 1800px;
+    }
+    100%{
+        right: -300px;
+    }
+} */
