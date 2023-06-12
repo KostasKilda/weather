@@ -16,21 +16,16 @@ function IP() {
   useEffect(() => {
 
 
-    let apiKey = '71bf921d4b7b00af38a08d679c35ea3b';
 
     async function getLocation() {
       try {
-        const ipResponse = await fetch('https://api.ipify.org/?format=json');
-        const data = await ipResponse.json();
-
-        const locationResponse = await fetch(`http://ip-api.com/json/${data.ip}`);
+        const locationAPIKey = '3e2afa18d85c4564a12ca3c8ac7f8300'
+        const locationResponse = await fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${locationAPIKey}`);
         const locationData = await locationResponse.json();
-        console.log(locationData);
-
-        citySet(locationData.city)
+        citySet(locationData.city.name);
 
         const apiKey = '71bf921d4b7b00af38a08d679c35ea3b';
-        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.lat}&lon=${locationData.lon}&units=metric&appid=${apiKey}`);
+        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${apiKey}`);
         const weatherPayload = await weatherResponse.json();
 
         weather.temperature = weatherPayload.main.temp;
