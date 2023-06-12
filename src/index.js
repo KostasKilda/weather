@@ -7,7 +7,6 @@ import IP from './components/cityLocator/location';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar />
     <IP />
   </React.StrictMode>
 );
