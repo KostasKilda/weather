@@ -1,0 +1,73 @@
+.weatherWindow{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../images/blueSky.jpg');
+    background-size: cover;
+
+}
+
+.weatherAnimation{
+    height: 30vh;
+    width: 100wv;
+    /* background-color: #1ee6e6; */
+}
+
+.currentParams{
+    height: 40vh;
+    width: 100wv;
+    /* background-color: #11b1d1; */
+}
+
+.cityName{
+    text-align: center;
+    font-size: 38px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 500;
+}
+
+.additionalInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.currentInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid black;
+    padding: 6px 12px;
+    border-radius: 10px;
+    margin: 20px 40px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.infoName{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    margin: 0 2px 4px 2px;
+}
+
+.infoParams{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.info{
+    margin: 0 10px 0 0;
+}
+
+img{
+    width: 50px;
+    height: 40px;
+}

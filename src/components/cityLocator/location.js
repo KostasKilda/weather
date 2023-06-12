@@ -1,4 +1,7 @@
 import React from 'react'
+import './style.css';
+import windLogo from '../../images/windSpeed.png'
+import tempLogo from '../../images/temp.png'
 import { useEffect, useState } from 'react';
 
 function IP() {
@@ -14,7 +17,7 @@ function IP() {
     wind: 0,
   }
 
-  // possible overall:
+  // possible {overall} conditions:
   let weatherConditions = ['Mist', 'Clouds', 'Clear', 'Rain']
 
   useEffect(() => {
@@ -51,12 +54,43 @@ function IP() {
   }, []);
 
   return (
-    <div>
-      <div>City: <b>{city}</b></div>
-      <div>Weather outside: {overall}</div>
-      <div>Current temperature: {temperature}c°</div>
-      <div>Wind speed: {wind}m/s</div>
-      
+    <div className='weatherWindow'>
+      <div>
+        <div className='weatherAnimation'>
+          <div>Weather outside: {overall}</div>
+        </div>
+        <div className='currentParams'>
+          <div className='cityName'>{city}</div>
+          <div className='additionalInfo'>
+          <div className='additionalInfo'>
+              <div className='currentInfo'>
+                <div className='infoName'>
+                  Temperature
+                </div>
+                <div className='infoParams'>
+                  <div className='info'>
+                    {temperature}c°
+                  </div>
+                  <img src={tempLogo} alt="Logo" />
+                </div>
+              </div>
+            </div>
+            <div className='additionalInfo'>
+              <div className='currentInfo'>
+                <div className='infoName'>
+                  Wind speed
+                </div>
+                <div className='infoParams'>
+                  <div className='info'>
+                    {wind}m/s
+                  </div>
+                  <img src={windLogo} alt="Logo" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
