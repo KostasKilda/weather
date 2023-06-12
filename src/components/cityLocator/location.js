@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 
 function IP() {
 
-  const [wind, windSet] = useState('City not found');
+  const [city, citySet] = useState('City not found');
+  const [overall, overallSet] = useState('Could not reach weather data');
+  const [wind, windSet] = useState(0);
   const [temperature, temperatureSet] = useState(0);
-  const [city, citySet] = useState(0);
-  const [overall, overallSet] = useState(0);
 
   let weather = {
     temperature: 0,
@@ -55,9 +55,10 @@ function IP() {
   return (
     <div>
       <div>City: <b>{city}</b></div>
+      <div>Weather outside: {overall}</div>
       <div>Current temperature: {temperature}c°</div>
       <div>Wind speed: {wind}m/s</div>
-      <div>Weather outside: {overall}</div>
+      
     </div>
   )
 }
