@@ -15,7 +15,7 @@ function IP() {
   }
 
   // possible overall:
-  let weatherConditions = ['Mist', 'Clouds', 'Clear']
+  let weatherConditions = ['Mist', 'Clouds', 'Clear', 'Rain']
 
   useEffect(() => {
 
