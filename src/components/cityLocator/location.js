@@ -14,6 +14,9 @@ function IP() {
     wind: 0,
   }
 
+  // possible overall:
+  let weatherConditions = ['Mist', 'Clouds', 'Clear']
+
   useEffect(() => {
 
 
@@ -29,19 +32,14 @@ function IP() {
         const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${apiKey}`);
         const weatherPayload = await weatherResponse.json();
 
-        console.log(weatherPayload)
-
         weather.temperature = weatherPayload.main.temp;
         weather.overall = weatherPayload.weather[0].main;
         weather.wind = weatherPayload.wind.speed;
 
-        console.log(weather)
 
         temperatureSet(weather.temperature)
         windSet(weather.wind)
         overallSet(weather.overall)
-
-        console.log('----------------------------------\n\n')
       } catch (error) {
         console.error(error);
       }
