@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 
 function IP() {
 
-  const [wind, windSet] = useState(0);
+  const [wind, windSet] = useState('City not found');
   const [temperature, temperatureSet] = useState(0);
   const [city, citySet] = useState(0);
+  const [overall, overallSet] = useState(0);
 
   let weather = {
     temperature: 0,
@@ -28,6 +29,8 @@ function IP() {
         const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${apiKey}`);
         const weatherPayload = await weatherResponse.json();
 
+        console.log(weatherPayload)
+
         weather.temperature = weatherPayload.main.temp;
         weather.overall = weatherPayload.weather[0].main;
         weather.wind = weatherPayload.wind.speed;
@@ -36,6 +39,7 @@ function IP() {
 
         temperatureSet(weather.temperature)
         windSet(weather.wind)
+        overallSet(weather.overall)
 
         console.log('----------------------------------\n\n')
       } catch (error) {
@@ -53,6 +57,7 @@ function IP() {
       <div>City: <b>{city}</b></div>
       <div>Current temperature: {temperature}c°</div>
       <div>Wind speed: {wind}m/s</div>
+      <div>Weather outside: {overall}</div>
     </div>
   )
 }
