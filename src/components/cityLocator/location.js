@@ -23,9 +23,11 @@ function IP() {
         const ipResponse = await fetch('https://api.ipify.org/?format=json');
         const data = await ipResponse.json();
 
-        const locationResponse = await fetch(`https://ipapi.co/${data.ip}/json/`);
+        const locationResponse = await fetch(`http://ip-api.com/json/${data.ip}`);
         const locationData = await locationResponse.json();
-        citySet(locationData.city);
+        console.log(locationData);
+
+        citySet(locationData.city)
 
         const apiKey = '71bf921d4b7b00af38a08d679c35ea3b';
         const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.lat}&lon=${locationData.lon}&units=metric&appid=${apiKey}`);
