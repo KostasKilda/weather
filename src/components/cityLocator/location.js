@@ -59,13 +59,11 @@ function IP() {
   useEffect(() => {
     async function getLocation() {
       try {
-        const locationAPIKey = '3e2afa18d85c4564a12ca3c8ac7f8300'
-        const locationResponse = await fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${locationAPIKey}`);
+        const locationResponse = await fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${process.env.locationAPIKey}`);
         const locationData = await locationResponse.json();
         citySet(locationData.city.name);
 
-        const apiKey = '71bf921d4b7b00af38a08d679c35ea3b';
-        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${apiKey}`);
+        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${process.env.weatherAPIkey}`);
         const weatherPayload = await weatherResponse.json();
 
         weather.temperature = weatherPayload.main.temp;
@@ -82,13 +80,16 @@ function IP() {
         if(weather.overall == 'Mist' || weather.overall == 'Rain'){
           makeItRain();
         }
-        else if(weather.overall == 'Clouds' || weather.overall == 'Clear'){
+        else if(weather.overall == 'Clouds'){
           let insertClouds = document.getElementsByClassName('weatherAnimation')
           if(insertClouds[0].children.length < 1){
             const clouds = document.createElement('div')
             clouds.setAttribute('class', 'clouds')
             insertClouds[0].appendChild(clouds)
           }
+        }
+        else{
+
         }
         
 
