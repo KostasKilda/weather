@@ -117,7 +117,7 @@ body.back-row-toggle .rain.back-row {
     position: relative;
     width: 100px;
     height: 50px;
-    background-color: yellow;
+    background: radial-gradient(#f5f502 ,#faba0a);
     border-radius: 0 0 50% 50%/0 0 100% 100%;
 }
 
@@ -125,7 +125,7 @@ body.back-row-toggle .rain.back-row {
     position: absolute;
     width: 6px;
     height: 30px;
-    background-color: orange;
+    background: linear-gradient(#e89609, #fcd80d);
     animation: wiggleSunRays 1s linear infinite;
 }
 
