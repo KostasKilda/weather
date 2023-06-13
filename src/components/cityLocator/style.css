@@ -367,4 +367,64 @@ body.splat-toggle .splat {
     .clouds {
         background-image: url('../../images/clouds.png');
     }
+
+    .sun {
+        width: 200px;
+        height: 100px;
+    }
+    
+    .sunAray {
+        width: 12px;
+        height: 60px;
+    }
+    
+    .sunAray-0{
+        top: -10px;
+        left: 240px;
+    }
+    
+    .sunAray-1{
+        top: 30px;
+        left: 230px;
+    }
+    
+    .sunAray-2{
+        top: 70px;
+        left: 210px;
+    }
+    
+    .sunAray-3{
+        top: 106px;
+        left: 162px;
+        transform: rotate(150deg);
+    }
+    
+    .sunAray-4{
+        top: 120px;
+        left: 96px;
+    }
+    
+    .sunAray-5{
+        top: 106px;
+        left: 26px;
+        transform: rotate(204deg);
+    }
+    
+    .sunAray-6{
+        top: 70px;
+        left: -20px;
+        transform: rotate(228deg);
+    }
+    
+    .sunAray-7{
+        top: 30px;
+        left: -46px;
+        transform: rotate(246deg);
+    }
+    
+    .sunAray-8{
+        top: -10px;
+        left: -60px;
+        transform: rotate(262deg);
+    }
 }
