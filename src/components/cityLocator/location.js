@@ -88,6 +88,38 @@ function IP() {
             classList[0].appendChild(clouds)
           }
         }
+        else {
+
+          console.log()
+
+          let classList = document.getElementsByClassName('weatherAnimation')
+          if (classList[0].children.length < 1) {
+            const sun = document.createElement('div')
+            sun.setAttribute('class', 'sun')
+            classList[0].appendChild(sun)
+
+            let sunClassList = document.getElementsByClassName('sun')
+
+            if(window.innerWidth < 520){
+              for (let i = 0; i < 9; i++) {
+                let sunArays = document.createElement('div')
+                sunArays.setAttribute('class', `sunAray sunAray-${i}`)
+                sunClassList[0].appendChild(sunArays)
+              }
+            }
+            else{
+              for (let i = 0; i < 16; i++) {
+                let sunArays = document.createElement('div')
+                sunArays.setAttribute('class', `sunAray sunAray-${i}`)
+                sunClassList[0].appendChild(sunArays)
+              }
+            }
+            
+          }
+
+        }
+
+
 
       } catch (error) {
         console.error(error);
@@ -119,7 +151,7 @@ function IP() {
                   </div>
                   {temperature >= 20 ? (
                     <img src={hotTempLogo} alt="Hot temperature logo" />
-                  ) : temperature <= 0 ? (
+                  ) : temperature < 0 ? (
                     <img src={coldTempLogo} alt="Cold temperature logo" />
                   ) : (
                     <img src={tempLogo} alt="Normal temperature logo" />
