@@ -59,11 +59,11 @@ function IP() {
   useEffect(() => {
     async function getLocation() {
       try {
-        const locationResponse = await fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${process.env.locationAPIKey}`);
+        const locationResponse = await fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${process.env.REACT_APP_locationAPIKey}`);
         const locationData = await locationResponse.json();
         citySet(locationData.city.name);
 
-        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${process.env.weatherAPIkey}`);
+        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${process.env.REACT_APP_weatherAPIkey}`);
         const weatherPayload = await weatherResponse.json();
 
         weather.temperature = weatherPayload.main.temp;
@@ -89,7 +89,7 @@ function IP() {
           }
         }
         else{
-
+          
         }
         
 
