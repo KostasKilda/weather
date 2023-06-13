@@ -5,7 +5,7 @@
 }
 
 .weatherAnimation {
-    height: 30vh;
+    height: 15vh;
     width: 100%;
 }
 
@@ -73,70 +73,80 @@ img {
     height: 40px;
 }
 
-@media(min-width: 720px){
-    .additionalInfoWrapper{
-        flex-direction: row;
-    }
+
+
+
+.clouds{
+    background-image: url('../../images/cloudsMobile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 175px;
+    width: 100%;
 }
 
-  
-  .rain {
+.rain {
     position: absolute;
     left: 0;
     width: 90%;
     z-index: 0;
-  }
-  
-  
-  body.back-row-toggle .rain.back-row {
+}
+
+
+body.back-row-toggle .rain.back-row {
     display: block;
-  }
-  
-  .drop {
+}
+
+.drop {
     position: absolute;
     bottom: 100%;
     width: 15px;
     height: 120px;
     pointer-events: none;
     animation: drop 0.5s linear infinite;
-  }
-  
-  @keyframes drop {
+}
+
+@keyframes drop {
     0% {
-      transform: translateY(0vh);
+        transform: translateY(0vh);
     }
+
     75% {
-      transform: translateY(90vh);
+        transform: translateY(90vh);
     }
+
     100% {
-      transform: translateY(90vh);
+        transform: translateY(90vh);
     }
-  }
-  
-  .stem {
+}
+
+.stem {
     width: 1px;
     height: 60%;
     margin-left: 7px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
     animation: stem 0.5s linear infinite;
-  }
-  
-  @keyframes stem {
+}
+
+@keyframes stem {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
+
     65% {
-      opacity: 1;
+        opacity: 1;
     }
+
     75% {
-      opacity: 0;
+        opacity: 0;
     }
+
     100% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
-  
-  .splat {
+}
+
+.splat {
     width: 15px;
     height: 10px;
     border-top: 2px dotted rgba(255, 255, 255, 0.5);
@@ -145,27 +155,69 @@ img {
     transform: scale(0);
     animation: splat 0.5s linear infinite;
     display: none;
-  }
-  
-  body.splat-toggle .splat {
+}
+
+body.splat-toggle .splat {
     display: block;
-  }
-  
-  @keyframes splat {
+}
+
+@keyframes splat {
     0% {
-      opacity: 1;
-      transform: scale(0);
+        opacity: 1;
+        transform: scale(0);
     }
+
     80% {
-      opacity: 1;
-      transform: scale(0);
+        opacity: 1;
+        transform: scale(0);
     }
+
     90% {
-      opacity: 0.5;
-      transform: scale(1);
+        opacity: 0.5;
+        transform: scale(1);
     }
+
     100% {
-      opacity: 0;
-      transform: scale(1.5);
+        opacity: 0;
+        transform: scale(1.5);
     }
-  }
+}
+
+@media(min-width: 300px){
+    .weatherAnimation {
+        height: 20vh;
+        width: 100%;
+    }
+}
+
+@media(min-width: 520px) {
+    .clouds{
+        background-image: url('../../images/cloudsMobile.png');
+        background-size: contain;
+        background-repeat: repeat;
+        height: 100%;
+        max-height: 175px;
+    }
+
+    .weatherAnimation {
+        height: 30vh;
+        width: 100%;
+    }
+
+    .cityName {
+        font-size: 44px;
+    }
+
+    .additionalInfoWrapper {
+        flex-direction: row;
+        margin: 40px 0;
+        align-items: flex-start;
+    }
+
+}
+
+@media(min-width: 820px) {
+    .clouds{
+        background-image: url('../../images/clouds.png');
+    }
+}

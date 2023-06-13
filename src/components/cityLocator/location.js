@@ -77,7 +77,20 @@ function IP() {
         windSet(weather.wind)
         overallSet(weather.overall)
 
-        makeItRain();
+        console.log(weather.overall)
+
+        if(weather.overall == 'Mist' || weather.overall == 'Rain'){
+          makeItRain();
+        }
+        else if(weather.overall == 'Clouds' || weather.overall == 'Clear'){
+          let insertClouds = document.getElementsByClassName('weatherAnimation')
+          if(insertClouds[0].children.length < 1){
+            const clouds = document.createElement('div')
+            clouds.setAttribute('class', 'clouds')
+            insertClouds[0].appendChild(clouds)
+          }
+        }
+        
 
 
       } catch (error) {
@@ -95,8 +108,6 @@ function IP() {
       <div>
         <div className="rain front-row"></div>
         <div className='weatherAnimation'>
-          <div>Weather outside: {overall}
-          </div>
         </div>
         <div className='currentParams'>
           <div className='cityName'>{city}</div>
