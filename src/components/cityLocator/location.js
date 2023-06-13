@@ -77,9 +77,7 @@ function IP() {
         windSet(weather.wind)
         overallSet(weather.overall)
 
-        if (weather.overall == 'Clear') {
-          makeItRain();
-        }
+        makeItRain();
 
 
       } catch (error) {
