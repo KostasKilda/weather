@@ -126,7 +126,7 @@ body.back-row-toggle .rain.back-row {
     width: 6px;
     height: 30px;
     background-color: orange;
-    animation: wiggleSunRays 2s linear infinite;
+    animation: wiggleSunRays 1s linear infinite;
 }
 
 .sunAray-0{
