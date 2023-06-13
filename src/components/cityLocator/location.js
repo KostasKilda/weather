@@ -77,22 +77,17 @@ function IP() {
 
         console.log(weather.overall)
 
-        if(weather.overall == 'Mist' || weather.overall == 'Rain'){
+        if (weather.overall == 'Mist' || weather.overall == 'Rain') {
           makeItRain();
         }
-        else if(weather.overall == 'Clouds'){
-          let insertClouds = document.getElementsByClassName('weatherAnimation')
-          if(insertClouds[0].children.length < 1){
+        else if (weather.overall == 'Clouds') {
+          let classList = document.getElementsByClassName('weatherAnimation')
+          if (classList[0].children.length < 1) {
             const clouds = document.createElement('div')
             clouds.setAttribute('class', 'clouds')
-            insertClouds[0].appendChild(clouds)
+            classList[0].appendChild(clouds)
           }
         }
-        else{
-          
-        }
-        
-
 
       } catch (error) {
         console.error(error);
