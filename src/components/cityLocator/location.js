@@ -22,6 +22,9 @@ function Weather() {
 
 
     function rainAnimation() {
+
+        let background = document.getElementsByClassName('weatherWindow')[0].style.background = 'linear-gradient(#486be0, #072eb0)';
+
         let increment = 0;
         let drops = "";
         let backDrops = "";
@@ -80,13 +83,19 @@ function Weather() {
     useEffect(() => {
         async function getLocation() {
             try {
+                const locationAPIKey = '3e2afa18d85c4564a12ca3c8ac7f8300'
+                const locationResponse = await fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${locationAPIKey}`);
+
                 // API for getting users location
-                const locationResponse = await fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${process.env.REACT_APP_locationAPIKey}`);
+                // const locationResponse = await fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${process.env.REACT_APP_locationAPIKey}`);
                 const locationData = await locationResponse.json();
                 citySet(locationData.city.name);
 
+                const apiKey = '71bf921d4b7b00af38a08d679c35ea3b';
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${apiKey}`);
+
                 // API for getting weather in users location
-                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${process.env.REACT_APP_weatherAPIkey}`);
+                // const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationData.location.latitude}&lon=${locationData.location.longitude}&units=metric&appid=${process.env.REACT_APP_weatherAPIkey}`);
                 const weatherPayload = await weatherResponse.json();
 
                 weather.temperature = weatherPayload.main.temp;
@@ -100,15 +109,15 @@ function Weather() {
 
 
                 // Different animations for various weather conditions
-                if (weather.overall == 'Mist' || weather.overall == 'Rain') {
+                // if (weather.overall == 'Mist' || weather.overall == 'Rain') {
                     rainAnimation();
-                }
-                else if (weather.overall == 'Clouds') {
-                    cloudAnimation();
-                }
-                else {
-                    sunAnimation();
-                }
+                // }
+                // else if (weather.overall == 'Clouds') {
+                //     cloudAnimation();
+                // }
+                // else {
+                //     sunAnimation();
+                // }
             } catch (error) {
                 console.error(error);
             }
@@ -136,7 +145,7 @@ function Weather() {
                                 <div className='info'>
                                     {temperature}c°
                                 </div>
-                                {temperature >= 16 ? (
+                                {temperature >= 18 ? (
                                     <img src={hotTempLogo} alt="Hot temperature logo" />
                                 ) : temperature < 0 ? (
                                     <img src={coldTempLogo} alt="Cold temperature logo" />
